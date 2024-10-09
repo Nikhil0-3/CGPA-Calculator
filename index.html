@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VIT CGPA Calculator</h1>
+        
+        <div class="gpa-section">
+            <h2>Calculate Semester GPA</h2>
+            <div id="subjectFields">
+                <!-- 5 Input Fields for Credits and Grades will load here -->
+            </div>
+            <button onclick="addSubjectField()">Add More Subjects</button>
+            <button onclick="calculateGPA()">Calculate GPA</button>
+            <p id="gpaResult"></p>
+        </div>
+
+        <div class="overall-cgpa-section">
+            <h2>Calculate Overall CGPA</h2>
+            <div id="semesterFields">
+                <!-- Input fields for GPA and credits will be dynamically added here -->
+            </div>
+            <button onclick="addSemesterField()">Add More Semesters</button>
+            <button onclick="calculateOverallCGPAFromInput()">Calculate CGPA</button>
+            <p id="manualCgpaResult"></p>
+        </div>
+
+        <div class="feedback-section">
+            <h2>Feedback</h2>
+            <input type="text" id="feedbackInput" placeholder="Enter your feedback here">
+            <button onclick="submitFeedback()">Submit Feedback</button>
+            <div id="feedbackList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
