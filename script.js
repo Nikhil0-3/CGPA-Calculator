@@ -8,7 +8,7 @@ function gradePoints(grade) {
         case 'E': return 5;
         case 'F': return 0;
         case 'P': return -1;
-        case 'N': return -1;
+        case 'N': return 0;
         default: return 0;
     }
 }
@@ -144,9 +144,10 @@ function calculateOverallCGPAFromInput() {
         const gpa = parseFloat(gpaInputs[i].value);
         const credits = parseFloat(creditInputs[i].value);
 
-        if (!isNaN(gpa) && !isNaN(credits)) {
-            totalGradePoints += gpa * credits;
-            totalCredits += credits;
+        // Ensure valid GPA and Credits are considered
+        if (!isNaN(gpa) && !isNaN(credits) && credits > 0) {
+            totalGradePoints += gpa * credits; // Multiply GPA by corresponding credits
+            totalCredits += credits; // Accumulate total credits
         }
     }
 
@@ -157,6 +158,7 @@ function calculateOverallCGPAFromInput() {
         alert('Please enter valid GPA and credit values for all semesters.');
     }
 }
+
 
 function submitFeedback() {
     const feedback = document.getElementById('feedbackInput').value;
